@@ -1,9 +1,35 @@
+:root {
+  /* Theme Variables Mapping to Header.css */
+  --text-primary: var(--text-color, black);
+  --text-secondary: #555555;
+  --text-tertiary: #888888;
+  --accent: var(--main-color, pink);
+  --bg-primary: var(--bg-color, white);
+
+  /* Layout Fallback Variables */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --bg-tertiary: #f9f9f9;
+  --transition: all 0.3s ease;
+}
+
+.container {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .bg {
-  position: absolute;
-  right: 2%;
-  top: 8%;
-  width: 1000px; /* Made the gray shape a bit bigger */
-  height: 720px;
+  /* position: absolute; */
+  /* right: -5%;
+  top: 4%; */
+  width: 100%;
+  max-width: 45%; /* Decreased from 65% to give the text area more width */
+  height: 600px;
   background-color: #ededed; /* The light gray shape color */
   background-image: url("/image5.jpg");
   background-size: cover;
@@ -14,5 +40,113 @@
   -webkit-mask: url("/blob.svg") center/contain no-repeat;
 }
 
+.text-home {
+  margin-left: 150px;
+}
 
+.hero-content {
+  flex: 1.8; /* Increased flex to expand the text area width */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
 
+.hero-tag {
+  font-size: 1.8rem; /* Increased from 0.8rem (~13px) */
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--text-tertiary);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: clamp(
+    1.5rem,
+    5vw,
+    5rem
+  ); /* Increased from clamp(2.5rem, 5vw, 4rem) (~32px to ~54px) */
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.hero-subtitle {
+  font-size: 2.2rem; /* Increased from 1.1rem (~16px) */
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 700px; /* Increased from 520px to prevent narrow text-wrapping */
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  padding: 16px 36px;
+  border-radius: var(--border-radius-sm);
+  font-size: 2rem; /* Increased from 0.95rem (~14.4px) */
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: var(--transition);
+  border: 1px solid var(--accent);
+}
+
+.btn-primary i {
+  font-size: 1.8rem; /* Scaled up to match 2rem text */
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover i {
+  transform: translateX(4px);
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  position: relative;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--bg-tertiary);
+  display: flex;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column-reverse;
+    gap: 40px;
+    margin: 80px 0;
+    padding: 0 5%;
+  }
+  .bg {
+    max-width: 100%;
+    width: 100%;
+    height: 450px;
+  }
+  .text-home {
+    margin-left: 0px;
+  }
+}
+.products_container {
+  margin-top: 100px;
+   display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 0px 120px 0px;
+}

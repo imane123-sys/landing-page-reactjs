@@ -1,0 +1,26 @@
+/* About Section Specific Wrap */
+.about_section {
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+  width: 100%;
+}
+
+/* Reusing your `.bg` class with a unique image for this block */
+.about_bg {
+  background-image: url("/about-image.jpg"); /* Replace with your specific about photo */
+  background-position: center;
+  background-size: cover;
+}
+
+/* Optional Layout Variation: If you want the image on the LEFT 
+   instead of the right for the About section, add this: */
+.about_section .container {
+  flex-direction: row; /* Overrides the hero's row-reverse for an alternating layout pattern */
+}
+
+/* Keeps tablet/mobile order pristine when stacked vertically */
+@media (max-width: 992px) {
+  .about_section .container {
+    flex-direction: column-reverse; /* Keeps image stacking correctly below text on mobile views */
+  }
+}

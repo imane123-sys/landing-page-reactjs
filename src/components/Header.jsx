@@ -6,7 +6,7 @@ export default function Header() {
     <>
       <header className="header">
         <a href="#home" className="logo">
-          Emmy <span>Shop</span>
+          Emmy <span className="shop">Shop</span>
         </a>
 
         <i className="bx bx-menu" id="menu-icon"></i>
