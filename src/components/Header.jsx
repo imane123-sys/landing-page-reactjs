@@ -4,15 +4,15 @@ import "../css/Header.css";
 export default function Header() {
   return (
     <>
-      <header class="header">
-        <a href="#home" class="logo">
+      <header className="header">
+        <a href="#home" className="logo">
           Emmy <span>Shop</span>
         </a>
 
-        <i class="bx bx-menu" id="menu-icon"></i>
+        <i className="bx bx-menu" id="menu-icon"></i>
 
-        <nav class="navbar">
-          <a href="#home" class="active">
+        <nav className="navbar">
+          <a href="#home" className="active">
             Accueil
           </a>
           <a href="#about">À propos</a>

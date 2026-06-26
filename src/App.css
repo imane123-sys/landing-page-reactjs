@@ -1,6 +1,18 @@
 .bg {
-  background-image: url("/image2.jpg");
+  position: absolute;
+  right: 2%;
+  top: 8%;
+  width: 1000px; /* Made the gray shape a bit bigger */
+  height: 720px;
+  background-color: #ededed; /* The light gray shape color */
+  background-image: url("/image5.jpg");
   background-size: cover;
-  width: 100%;
-  height: 500px;
+  background-position: center;
+  background-blend-mode: multiply;
+
+  mask: url("/blob.svg") center/contain no-repeat;
+  -webkit-mask: url("/blob.svg") center/contain no-repeat;
 }
+
+
+
