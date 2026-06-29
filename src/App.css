@@ -1,12 +1,10 @@
 :root {
-  /* Theme Variables Mapping to Header.css */
   --text-primary: var(--text-color, black);
   --text-secondary: #555555;
   --text-tertiary: #888888;
   --accent: var(--main-color, pink);
   --bg-primary: var(--bg-color, white);
 
-  /* Layout Fallback Variables */
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
