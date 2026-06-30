@@ -9,29 +9,27 @@ import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import ButtonSearch from "./components/ButtonSearch";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProductDisplay from "./components/ProductDisplay";
+import Affichage from "./components/Affichage";
+import ProductDetail from "./components/ProductDetail";
 
 function App() {
-  const [displayedProducts, setDisplayedProducts] = useState(products);
-
   return (
     <>
       <Header />
-      <Hero />
-      <ButtonSearch
-        onSearchChange={(listFiltree) => setDisplayedProducts(listFiltree)}
-      />
 
-      <div className="products_container">
-        {/* 👈 CORRECTION : Boucle sur displayedProducts au lieu de products */}
-        {displayedProducts.map((p) => (
-          <Product key={p.id} product={p} />
-        ))}
-      </div>
+      <Routes>
+        <Route path="/acceuil" element={<Affichage />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
 
-      <About />
-      <Testimonials />
-      <Contact />
-      <Footer />
+        <Route path="/produits" element={<ProductDisplay />} />
+
+        <Route path="/apropos" element={<About />} />
+        <Route path="/temoignages" element={<Testimonials />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/footer" element={<Footer />} />
+      </Routes>
     </>
   );
 }

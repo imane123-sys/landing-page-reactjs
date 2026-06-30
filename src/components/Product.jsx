@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import "../css/Product.css";
 
 export default function Product({ product }) {
   let { id, nom, img, price, category } = product;
   return (
-    <div className="product-card">
+    <Link to={`/product/${id}`}className="product-card">
       <div className="product-image-container">
         <img src={img} alt={nom} className="product-image" loading="lazy" />
         <div className="product-card-overlay">
@@ -17,6 +18,6 @@ export default function Product({ product }) {
         <h3 className="product-card-name">{nom}</h3>
         <span className="product-card-price">${price}</span>
       </div>
-    </div>
+    </Link>
   );
 }

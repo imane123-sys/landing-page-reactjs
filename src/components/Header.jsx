@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Header.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -12,13 +13,13 @@ export default function Header() {
         <i className="bx bx-menu" id="menu-icon"></i>
 
         <nav className="navbar">
-          <a href="#home" className="active">
+          <Link to="/acceuil" className="active">
             Accueil
-          </a>
-          <a href="#about">À propos</a>
-          <a href="#competences">Produits</a>
-          <a href="#projects">Témoignages</a>
-          <a href="#contact">Contact</a>
+          </Link>
+          <Link to="/apropos">À propos</Link>
+          <Link to="/produits">Produits</Link>
+          <Link to="/temoignages">Témoignages</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
       </header>
     </>

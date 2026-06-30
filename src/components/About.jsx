@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/About.css";
 
 export default function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="about_section">
-   
       <div className="container">
         <div className="bg about_bg" aria-hidden="true"></div>
 
