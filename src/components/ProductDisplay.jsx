@@ -8,6 +8,10 @@ export default function ProductDisplay() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const handleSupprimeProduit = (idProduit) =>
+    setDisplayedProducts(
+      displayedProducts.filter((item) => item.id != idProduit),
+    );
 
   return (
     <>
@@ -16,7 +20,11 @@ export default function ProductDisplay() {
       />
       <div className="products_container">
         {displayedProducts.map((p) => (
-          <Product key={p.id} product={p} />
+          <Product
+            key={p.id}
+            product={p}
+            handleSupprimeProduit={handleSupprimeProduit}
+          />
         ))}
       </div>
     </>

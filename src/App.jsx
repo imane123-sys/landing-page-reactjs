@@ -13,15 +13,48 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductDisplay from "./components/ProductDisplay";
 import Affichage from "./components/Affichage";
 import ProductDetail from "./components/ProductDetail";
+import CartDisplay from "./components/CartDisplay";
 
 function App() {
+  const [cart, setCart] = useState([]);
+  const addToCart = (product) => {
+    const existingItem = cart.find((item) => item.id === product.id);
+    if (existingItem) {
+      setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        ),
+      );
+      console.log(cart);
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+  };
+
+  const handleSupprimerArticle = (idArticleSupprime) => {
+    
+    setCart(cart.filter((item) => item.id != idArticleSupprime));
+
+  };
+
   return (
     <>
       <Header />
 
       <Routes>
         <Route path="/acceuil" element={<Affichage />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route
+          path="/product/:id"
+          element={
+            <ProductDetail
+              cart={cart}
+              setCart={setCart}
+              addToCart={addToCart}
+            />
+          }
+        />
 
         <Route path="/produits" element={<ProductDisplay />} />
 
@@ -29,6 +62,15 @@ function App() {
         <Route path="/temoignages" element={<Testimonials />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/footer" element={<Footer />} />
+        <Route
+          path="/cart"
+          element={
+            <CartDisplay
+              cart={cart}
+              handleSupprimerArticle={handleSupprimerArticle}
+            />
+          }
+        />
       </Routes>
     </>
   );

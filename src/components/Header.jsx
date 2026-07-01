@@ -20,6 +20,12 @@ export default function Header() {
           <Link to="/produits">Produits</Link>
           <Link to="/temoignages">Témoignages</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/cart">
+            <i
+              className="fas fa-shopping-cart"
+              style={{ marginRight: "10px" }}
+            ></i>
+          </Link>
         </nav>
       </header>
     </>

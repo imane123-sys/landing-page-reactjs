@@ -4,8 +4,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 import products from "../../data/data";
 import "../css/ProductDetail.css";
+import Cart from "./Cart";
 
-export default function ProductDetail() {
+export default function ProductDetail({ cart, setCart, addToCart }) {
   const { id } = useParams();
   const [isAdded, setIsAdded] = useState(false);
 
@@ -73,14 +74,19 @@ export default function ProductDetail() {
 
             <div className="divider"></div>
 
-            <button className={`add-to-cart-btn ${isAdded ? "success" : ""}`}>
+            <button
+              className={`add-to-cart-btn ${isAdded ? "success" : ""}`}
+              onClick={() => addToCart(product)}
+            >
               {isAdded ? (
                 <>
                   <i className="fa-solid fa-check"></i> Added to Cart
                 </>
               ) : (
                 <>
-                  <i className="fa-solid fa-bag-shopping"></i> Add to Cart
+                  <Link to="/cart">
+                    <i className="fa-solid fa-bag-shopping"></i> Add to Cart
+                  </Link>
                 </>
               )}
             </button>
