@@ -1,16 +1,15 @@
-/* Contact Section Base */
 .contact_section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 120px; /* Matches your products horizontal alignment */
+  padding: 100px 120px;
   background-color: var(--bg-primary);
   width: 100%;
 }
 
 .contact_container {
   width: 100%;
-  max-width: 500px; /* Clean, centered form column width */
+  max-width: 500px;
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +29,6 @@
   line-height: 1.5;
 }
 
-/* Form Styles */
 .contact_form {
   display: flex;
   flex-direction: column;
@@ -71,7 +69,6 @@
   font-family: inherit;
 }
 
-/* Input Focus States */
 .form_group input:focus,
 .form_group textarea:focus {
   border-color: var(--accent);
@@ -79,7 +76,6 @@
   background-color: var(--bg-primary);
 }
 
-/* Styled Submit Button mirroring your .btn-primary values */
 .btn-submit {
   display: inline-flex;
   align-items: center;
@@ -107,7 +103,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 992px) {
   .contact_section {
     padding: 60px 5%;

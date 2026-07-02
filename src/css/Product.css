@@ -60,7 +60,6 @@
   transition: var(--transition);
 }
 
-/* Hover Effects */
 
 .product-card:hover {
   transform: translateY(-4px);
@@ -89,7 +88,6 @@
   transform: translateX(4px);
 }
 
-/* Card Details */
 
 .product-card-details {
   padding: 16px 14px;

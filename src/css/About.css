@@ -4,17 +4,11 @@
   width: 100%;
 }
 
-/* .about_bg {
-  background-image: url("/image7.jpg");
-  background-position: start;
-  background-size: cover;
-} */
 
 .about_bg {
   background-image: url("/image7.jpg");
-  /* background-position: top center; */
-  background-size: contain; /* Force l'image à s'afficher entièrement */
-  background-repeat: no-repeat; /* Évite que l'image se répète si le conteneur est grand */
+  background-size: contain;
+  background-repeat: no-repeat; 
 }
 
 .about_section .container {

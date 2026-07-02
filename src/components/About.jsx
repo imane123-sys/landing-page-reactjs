@@ -21,7 +21,6 @@ export default function About() {
           </p>
           <a href="#contact" className="btn-primary">
             Me Contacter <i className="ri-arrow-right-line"></i>{" "}
-            {/* Scaled icon alignment */}
           </a>
         </div>
       </div>
