@@ -34,9 +34,7 @@ function App() {
   };
 
   const handleSupprimerArticle = (idArticleSupprime) => {
-    
     setCart(cart.filter((item) => item.id != idArticleSupprime));
-
   };
 
   return (
@@ -71,6 +69,7 @@ function App() {
             />
           }
         />
+       
       </Routes>
     </>
   );
