@@ -1,0 +1,115 @@
+.product_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 120px;
+  background-color: var(--bg-primary);
+  width: 100%;
+}
+
+.product_container {
+  width: 100%;
+  max-width: 600px;
+  background: var(--bg-tertiary);
+  padding: 40px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.product_title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.product_subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.7rem;
+  margin-bottom: 35px;
+}
+
+.product_form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form_group label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.form_group input {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.7rem;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--transition);
+  outline: none;
+}
+
+.form_group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.3);
+}
+
+.form_group input[type="file"] {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 220px;
+  padding: 16px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 992px) {
+  .product_section {
+    padding: 60px 5%;
+  }
+
+  .product_container {
+    padding: 30px;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
