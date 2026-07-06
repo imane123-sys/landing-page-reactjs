@@ -13,7 +13,7 @@ export default function Header() {
         <i className="bx bx-menu" id="menu-icon"></i>
 
         <nav className="navbar">
-          <Link to="/acceuil" className="active">
+          <Link to="/" className="active">
             Accueil
           </Link>
           <Link to="/apropos">À propos</Link>

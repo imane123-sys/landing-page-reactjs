@@ -14,6 +14,7 @@ import ProductDisplay from "./components/ProductDisplay";
 import Affichage from "./components/Affichage";
 import ProductDetail from "./components/ProductDetail";
 import CartDisplay from "./components/CartDisplay";
+import Layout from "./components/Layout";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -39,37 +40,53 @@ function App() {
 
   return (
     <>
-      <Header />
-
       <Routes>
-        <Route path="/acceuil" element={<Affichage />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Affichage />} />
+          <Route
+            path="/product/:id"
+            element={
+              <ProductDetail
+                cart={cart}
+                setCart={setCart}
+                addToCart={addToCart}
+              />
+            }
+          />
+
+          <Route path="/produits" element={<ProductDisplay />} />
+
+          <Route path="/apropos" element={<About />} />
+          <Route path="/temoignages" element={<Testimonials />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/footer" element={<Footer />} />
+          <Route
+            path="/cart"
+            element={
+              <CartDisplay
+                cart={cart}
+                handleSupprimerArticle={handleSupprimerArticle}
+              />
+            }
+          />
+        </Route>
+        {/* <Route path="*" element={<h1>404-Not Found</h1>} />       */}
         <Route
-          path="/product/:id"
+          path="*"
           element={
-            <ProductDetail
-              cart={cart}
-              setCart={setCart}
-              addToCart={addToCart}
+            <img
+              src="/noutFound2.png"
+              style={{
+                display: "block",
+                width: "min(90%, 600px)",
+                height: "500px",
+                margin: "28px auto",
+                borderRadius: "18px",
+                objectFit: "cover",
+              }}
             />
           }
         />
-
-        <Route path="/produits" element={<ProductDisplay />} />
-
-        <Route path="/apropos" element={<About />} />
-        <Route path="/temoignages" element={<Testimonials />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/footer" element={<Footer />} />
-        <Route
-          path="/cart"
-          element={
-            <CartDisplay
-              cart={cart}
-              handleSupprimerArticle={handleSupprimerArticle}
-            />
-          }
-        />
-       
       </Routes>
     </>
   );
