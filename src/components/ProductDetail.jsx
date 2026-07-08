@@ -27,7 +27,6 @@ export default function ProductDetail({ cart, setCart, addToCart }) {
   }
   return (
     <div className="product-page-wrapper">
-      <Header />
 
       <main className="product-page-container animate-slide-up">
         <div className="back-nav">
@@ -75,7 +74,7 @@ export default function ProductDetail({ cart, setCart, addToCart }) {
             <div className="divider"></div>
 
             <button
-              className={`add-to-cart-btn ${isAdded ? "success" : ""}`}
+              // className={`add-to-cart-btn ${isAdded ? "success" : ""}`}
               onClick={() => addToCart(product)}
             >
               {isAdded ? (

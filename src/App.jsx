@@ -39,10 +39,10 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header  cart={cart}/>
 
       <Routes>
-        <Route path="/acceuil" element={<Affichage />} />
+        <Route path="/" element={<Affichage />} />
         <Route
           path="/product/:id"
           element={

@@ -2,7 +2,11 @@ import React from "react";
 import "../css/Header.css";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ cart }) {
+  // console.log(cart);
+  // {(cart)?cart:""}
+  
+
   return (
     <>
       <header className="header">
@@ -13,7 +17,7 @@ export default function Header() {
         <i className="bx bx-menu" id="menu-icon"></i>
 
         <nav className="navbar">
-          <Link to="/acceuil" className="active">
+          <Link to="/" className="active">
             Accueil
           </Link>
           <Link to="/apropos">À propos</Link>
@@ -26,6 +30,7 @@ export default function Header() {
               style={{ marginRight: "10px" }}
             ></i>
           </Link>
+          {cart.length}
         </nav>
       </header>
     </>

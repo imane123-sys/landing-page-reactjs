@@ -3,6 +3,7 @@ import "../css/Product.css";
 
 export default function Product({ product, handleSupprimeProduit }) {
   let { id, nom, img, price, category } = product;
+
   return (
     <div className="product-card">
       <div className="product-image-container">
@@ -20,7 +21,7 @@ export default function Product({ product, handleSupprimeProduit }) {
       </div>
       <div>
         <button onClick={() => handleSupprimeProduit(id)}>
-          <Link to="/produits">Supprimer</Link>{" "}
+          <Link to="/produits">Supprimer</Link>
         </button>
       </div>
     </div>

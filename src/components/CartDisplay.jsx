@@ -30,7 +30,7 @@ export default function CartDisplay({ cart, handleSupprimerArticle }) {
             <li>{crt.nom}</li>
             <li>{crt.price}</li>
             <div className="quantity_ddelet_container">
-            <li className="quantity_li">{crt.quantity}</li>
+              <li className="quantity_li">{crt.quantity}</li>
               <button onClick={() => handleSupprimerArticle(crt.id)}>
                 <Link to="/cart"></Link>Supprimer
               </button>
