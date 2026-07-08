@@ -6,11 +6,17 @@ import products from "../../data/data";
 import "../css/ProductDetail.css";
 import Cart from "./Cart";
 
-export default function ProductDetail({ cart, setCart, addToCart }) {
+export default function ProductDetail({
+  cart,
+  setCart,
+  addToCart,
+  displayedProducts,
+  setDisplayedProducts,
+}) {
   const { id } = useParams();
   const [isAdded, setIsAdded] = useState(false);
 
-  const product = products.find((p) => p.id === Number(id));
+  const product = displayedProducts.find((p) => p.id === Number(id));
 
   if (!product) {
     return (

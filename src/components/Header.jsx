@@ -20,6 +20,7 @@ export default function Header() {
           <Link to="/produits">Produits</Link>
           <Link to="/temoignages">Témoignages</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/ajoutProduits">+</Link>
           <Link to="/cart">
             <i
               className="fas fa-shopping-cart"

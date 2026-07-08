@@ -15,9 +15,12 @@ import Affichage from "./components/Affichage";
 import ProductDetail from "./components/ProductDetail";
 import CartDisplay from "./components/CartDisplay";
 import Layout from "./components/Layout";
+import FormulaireProduit from "./components/FormulaireProduit";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [displayedProducts, setDisplayedProducts] = useState(products);
+
   const addToCart = (product) => {
     const existingItem = cart.find((item) => item.id === product.id);
     if (existingItem) {
@@ -42,7 +45,15 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Affichage />} />
+          <Route
+            path="/"
+            element={
+              <Affichage
+                displayedProducts={displayedProducts}
+                setDisplayedProducts={setDisplayedProducts}
+              />
+            }
+          />
           <Route
             path="/product/:id"
             element={
@@ -50,11 +61,21 @@ function App() {
                 cart={cart}
                 setCart={setCart}
                 addToCart={addToCart}
+                displayedProducts={displayedProducts}
+                setDisplayedProducts={setDisplayedProducts}
               />
             }
           />
 
-          <Route path="/produits" element={<ProductDisplay />} />
+          <Route
+            path="/produits"
+            element={
+              <ProductDisplay
+                displayedProducts={displayedProducts}
+                setDisplayedProducts={setDisplayedProducts}
+              />
+            }
+          />
 
           <Route path="/apropos" element={<About />} />
           <Route path="/temoignages" element={<Testimonials />} />
@@ -70,6 +91,16 @@ function App() {
             }
           />
         </Route>
+        <Route
+          path="/ajoutProduits"
+          element={
+            <FormulaireProduit
+              displayedProducts={displayedProducts}
+              setDisplayedProducts={setDisplayedProducts}
+            />
+          }
+        />
+
         {/* <Route path="*" element={<h1>404-Not Found</h1>} />       */}
         <Route
           path="*"
