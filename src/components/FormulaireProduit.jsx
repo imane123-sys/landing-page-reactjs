@@ -3,6 +3,7 @@ import "../css/FormulaireProduit.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object({
   nom: yup.string().required("Le nom est obligatoire"),
@@ -38,6 +39,8 @@ export default function FormulaireProduit({
   displayedProducts,
   setDisplayedProducts,
 }) {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -62,17 +65,16 @@ export default function FormulaireProduit({
     setDisplayedProducts([...displayedProducts, nouveauProduit]);
 
     reset();
+    navigate("/");
   };
 
   return (
     <section className="product_section">
       <div className="product_container">
         <h1 className="product_title">Ajouter un produit</h1>
-
         <p className="product_subtitle">
           Remplissez les informations du produit.
         </p>
-
         <form className="product_form" onSubmit={handleSubmit(onSubmit)}>
           <div className="form_group">
             <label>Nom</label>
